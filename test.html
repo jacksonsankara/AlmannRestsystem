@@ -1,0 +1,20 @@
+<label for="myInput">Select or enter your choice:</label>
+<select id="myInput" name="myInput" onchange="handleSelectChange(this)">
+  <option value="option1">Option 1</option>
+  <option value="option2">Option 2</option>
+  <option value="option3">Option 3</option>
+  <option value="other">Other</option>
+</select>
+<input type="text" id="customInput" name="customInput" placeholder="Enter your choice" style="display: none;">
+<button type="submit">Submit</button>
+
+<script>
+  function handleSelectChange(selectElement) {
+    var customInput = document.getElementById('customInput');
+    if (selectElement.value === 'other') {
+      customInput.style.display = 'inline-block';
+    } else {
+      customInput.style.display = 'none';
+    }
+  }
+</script>
